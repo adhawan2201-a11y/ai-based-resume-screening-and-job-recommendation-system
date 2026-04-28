@@ -129,9 +129,8 @@ def extract_experience_years(text: str) -> float:
     return min(total, 40.0)  # Cap at 40 years
 
 
-import spacy
-
 try:
+    import spacy
     nlp = spacy.load("en_core_web_sm")
 except Exception:
     nlp = None
