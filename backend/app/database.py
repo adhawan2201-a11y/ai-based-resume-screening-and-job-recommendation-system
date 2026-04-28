@@ -1,5 +1,6 @@
 """MongoDB connection manager using Motor (async driver)."""
 
+import ssl
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
 from app.config import get_settings
 
@@ -12,7 +13,11 @@ db: AsyncIOMotorDatabase = None
 async def connect_to_mongo():
     """Create MongoDB connection on application startup."""
     global client, db
-    client = AsyncIOMotorClient(settings.MONGODB_URL)
+    # tlsInsecure bypasses strict TLS verification — needed for Python 3.13 + Atlas
+    client = AsyncIOMotorClient(
+        settings.MONGODB_URL,
+        tlsInsecure=True,
+    )
     db = client[settings.DATABASE_NAME]
 
     # Create indexes for performance
