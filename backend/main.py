@@ -4,9 +4,9 @@ Main FastAPI Application
 """
 
 import os
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 
 from app.database import connect_to_mongo, close_mongo_connection, get_database
@@ -59,13 +59,32 @@ app = FastAPI(
 )
 
 # ─── CORS Middleware ──────────────────────────────────────
+# NOTE: allow_credentials must be False when allow_origins=["*"]
+# We use Bearer token auth (Authorization header), not cookies,
+# so credentials=False is correct and safe here.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
+
+
+# ─── Explicit OPTIONS preflight handler (failsafe) ───────
+@app.options("/{full_path:path}")
+async def preflight_handler(request: Request, full_path: str):
+    """Handle all CORS preflight OPTIONS requests explicitly."""
+    return JSONResponse(
+        content={"message": "OK"},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "*",
+        },
+    )
+
 
 # ─── Register Routes ─────────────────────────────────────
 app.include_router(auth_routes.router)
@@ -100,6 +119,7 @@ async def root():
         "name": "AI-Based Resume Screening & Job Recommendation System",
         "version": "1.0.0",
         "docs": "/docs",
+        "cors": "enabled for all origins",
     }
 
 
