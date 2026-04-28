@@ -1,0 +1,51 @@
+Priya Sharma
+Data Scientist
+Email: priya.sharma@email.com | Phone: +91-8765432109
+
+SUMMARY
+Data scientist with 2 years of experience in machine learning, statistical modeling, and data analysis. Strong background in Python, deep learning, and NLP.
+
+EDUCATION
+M.Tech in Artificial Intelligence
+Indian Institute of Technology Delhi, 2022
+CGPA: 9.1/10
+
+B.Tech in Computer Science
+VIT University, 2020
+CGPA: 8.8/10
+
+SKILLS
+Languages: Python, R, SQL, Julia
+ML/AI: Machine Learning, Deep Learning, NLP, Computer Vision, Reinforcement Learning
+Frameworks: TensorFlow, PyTorch, Keras, scikit-learn, Hugging Face
+Data: Pandas, NumPy, SciPy, Matplotlib, Seaborn, Plotly
+Big Data: Apache Spark, Hadoop, Kafka
+Tools: Jupyter, Git, Docker, MLflow, Tableau, Power BI
+Cloud: AWS SageMaker, Google Cloud AI Platform
+
+EXPERIENCE
+Data Scientist | AI Analytics Corp | 2022 - Present
+- Built NLP models for sentiment analysis achieving 93% accuracy on production data
+- Developed recommendation engine using collaborative filtering and deep learning
+- Created automated ML pipelines using MLflow and Apache Airflow
+- Conducted A/B tests and statistical analysis to drive product decisions
+- Reduced model inference time by 40% through optimization techniques
+
+Research Intern | Microsoft Research India | 2021 - 2022
+- Worked on transformer-based models for machine translation
+- Published paper on efficient attention mechanisms at ACL 2022
+- Collaborated with senior researchers on multilingual NLP projects
+
+PROJECTS
+1. Medical Image Classification
+   - Built CNN model for X-ray diagnosis with 95% accuracy
+   - Technologies: PyTorch, OpenCV, FastAPI
+
+2. Stock Price Prediction
+   - Developed LSTM-based model for time series forecasting
+   - Achieved 15% improvement over baseline models
+   - Technologies: TensorFlow, Pandas, NumPy
+
+CERTIFICATIONS
+- Deep Learning Specialization - Andrew Ng (Coursera)
+- TensorFlow Developer Certificate (Google)

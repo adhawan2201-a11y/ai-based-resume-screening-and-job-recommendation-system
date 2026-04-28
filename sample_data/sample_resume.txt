@@ -1,0 +1,60 @@
+John Doe
+Full Stack Developer
+Email: john.doe@email.com | Phone: +91-9876543210 | LinkedIn: linkedin.com/in/johndoe
+
+SUMMARY
+Passionate full stack developer with 3+ years of experience in building scalable web applications using modern technologies. Proficient in Python, JavaScript, React, and cloud services.
+
+EDUCATION
+B.Tech in Computer Science and Engineering
+National Institute of Technology, 2020
+CGPA: 8.5/10
+
+SKILLS
+Programming Languages: Python, JavaScript, TypeScript, Java, C++
+Frontend: React.js, Next.js, HTML5, CSS3, Tailwind CSS, Redux
+Backend: Node.js, Express.js, FastAPI, Django, Flask
+Databases: MongoDB, PostgreSQL, MySQL, Redis
+Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD, GitHub Actions
+AI/ML: Machine Learning, TensorFlow, scikit-learn, NLP, Pandas, NumPy
+Tools: Git, Jira, Postman, VS Code, Linux
+
+EXPERIENCE
+Software Developer | TechStart Solutions | 2021 - Present
+- Developed and maintained RESTful APIs using FastAPI and Node.js serving 100K+ daily requests
+- Built responsive React.js dashboards with real-time data visualization using Recharts
+- Implemented CI/CD pipelines with GitHub Actions and Docker, reducing deployment time by 60%
+- Designed and optimized MongoDB database schemas for improved query performance
+- Collaborated with cross-functional teams using Agile/Scrum methodology
+
+Junior Developer | WebDev Agency | 2020 - 2021
+- Created 15+ responsive websites using React, HTML, CSS, and JavaScript
+- Integrated third-party APIs including payment gateways and authentication providers
+- Wrote unit tests using Jest and Pytest achieving 85% code coverage
+- Participated in code reviews and mentored 2 junior interns
+
+PROJECTS
+1. E-Commerce Platform
+   - Built full-stack e-commerce app with React, Node.js, and MongoDB
+   - Implemented payment integration, search, and admin dashboard
+   - Technologies: React, Express, MongoDB, Redux, Stripe API
+
+2. AI Chatbot System
+   - Developed NLP-based chatbot for customer support automation
+   - Used Python, TensorFlow, and spaCy for intent classification
+   - Achieved 90% accuracy in intent detection
+
+3. Real-time Analytics Dashboard
+   - Created real-time dashboard for monitoring application metrics
+   - Used WebSocket, React, and D3.js for live data visualization
+   - Deployed on AWS with auto-scaling configuration
+
+CERTIFICATIONS
+- AWS Certified Developer Associate (2023)
+- Google Cloud Professional Data Engineer (2022)
+- MongoDB Certified Developer (2021)
+
+ACHIEVEMENTS
+- Winner, National Hackathon 2022 (Team of 4)
+- Published research paper on "ML-based Code Review Automation" at IEEE Conference 2021
+- Open source contributor with 500+ GitHub stars

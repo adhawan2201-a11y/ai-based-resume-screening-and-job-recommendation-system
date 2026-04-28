@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Global Styles ─────────────────────────────────────── */
+:root {
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --gradient-dark: linear-gradient(135deg, #03050d 0%, #0a0d1a 100%);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #03050d;
+  color: #e2e8f0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar Styling ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03050d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+/* ─── Glass Card ────────────────────────────────────────── */
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[2.5rem];
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-500;
+  }
+
+  .glass-card-hover:hover {
+    @apply border-indigo-500/30 -translate-y-1.5;
+    box-shadow: 0 30px 70px rgba(79, 70, 229, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 font-black;
+  }
+
+  .gradient-btn {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white font-black py-3 px-8 rounded-2xl 
+           transition-all duration-300 shadow-xl shadow-indigo-900/30 hover:shadow-indigo-800/40 hover:-translate-y-1;
+  }
+
+  .input-field {
+    @apply w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white 
+           placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:ring-4 
+           focus:ring-indigo-500/10 transition-all duration-300;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest border;
+  }
+
+  .badge-primary {
+    @apply badge bg-indigo-500/10 text-indigo-400 border-indigo-500/20 shadow-sm;
+  }
+
+  .badge-accent {
+    @apply badge bg-emerald-500/10 text-emerald-400 border-emerald-500/20;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-500/10 text-amber-400 border-amber-500/20;
+  }
+
+  .badge-danger {
+    @apply badge bg-rose-500/10 text-rose-400 border-rose-500/20;
+  }
+
+  .section-title {
+    @apply text-sm font-black text-slate-500 uppercase tracking-[0.3em] mb-8;
+  }
+
+  .stat-card {
+    @apply glass-card p-6 flex flex-col items-center justify-center text-center hover:scale-105 transition-all duration-500;
+  }
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; filter: blur(80px); }
+  50% { opacity: 0.8; filter: blur(100px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 10s ease-in-out infinite;
+}
+
+/* ─── Score Ring ─────────────────────────────────────────── */
+.score-ring {
+  @apply relative inline-flex items-center justify-center transition-all duration-500;
+}
+
+.score-ring svg {
+  @apply transform -rotate-90;
+}
+
+.score-ring .score-value {
+  @apply absolute font-black tracking-tight text-white;
+}
+
+/* ─── Chat Styles ───────────────────────────────────────── */
+.chat-bubble-bot {
+  @apply bg-white/[0.03] border border-white/10 rounded-[2rem] rounded-tl-none p-6 text-slate-200 shadow-xl;
+}
+
+.chat-bubble-user {
+  @apply bg-indigo-600/10 border border-indigo-500/20 rounded-[2rem] rounded-tr-none p-6 text-white shadow-xl shadow-indigo-900/10;
+}
+
+/* ─── Custom Scrollbar ──────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+/* ─── Markdown Formatting ───────────────────────────────── */
+.chat-markdown {
+  @apply leading-relaxed;
+}
+
+.chat-markdown p {
+  @apply mb-4 last:mb-0;
+}
+
+.chat-markdown strong {
+  @apply text-indigo-400 font-black;
+}
+
+.chat-markdown ul, .chat-markdown ol {
+  @apply ml-6 mb-4 space-y-2 list-disc;
+}
+
+.chat-markdown li {
+  @apply text-slate-300;
+}
